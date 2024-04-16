@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('img/forgetbg.jpg')center/cover no-repeat;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: url('img/forget.jpg')center/cover no-repeat;
+        }
+
+        .forgot-password-form {
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .forgot-password-form h2 {
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .forgot-password-form p {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .forgot-password-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 8px 12px;
+            border: 1px solid #4f4f4f;
+            border-radius: 4px;
+            transition: all 0.2s ease-in;
+            position: relative;
+            overflow: hidden;
+            font-size: 14px;
+            cursor: pointer;
+            color: black;
+            z-index: 1;
+          }
+          
+          .button:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) scaleY(1) scaleX(1.25);
+            top: 100%;
+            width: 140%;
+            height: 180%;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            display: block;
+            transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+            z-index: -1;
+          }
+          
+          .button:after {
+            content: "";
+            position: absolute;
+            left: 55%;
+            transform: translateX(-50%) scaleY(1) scaleX(1.45);
+            top: 180%;
+            width: 160%;
+            height: 190%;
+            background-color: #39bda7;
+            border-radius: 50%;
+            display: block;
+            transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+            z-index: -1;
+          }
+          
+          .button:hover {
+            color: #ffffff;
+            border: 1px solid #39bda7;
+            font-weight: bold;
+          }
+          
+          .button:hover:before {
+            top: -35%;
+            background-color: #39bda7;
+            transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+          }
+          
+          .button:hover:after {
+            top: -45%;
+            background-color: #39bda7;
+            transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+          }
+          
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form class="forgot-password-form">
+            <h2>Forgot Password</h2>
+            <p>Please enter your email address below and we'll send you a link to reset your password.</p>
+            <input type="email" placeholder="Email address" required>
+            <button type="submit" class="button">Reset Password</button>
+        </form>
+    </div>
+</body>
+
+</html>

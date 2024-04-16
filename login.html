@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-G6BF3oj4KZ9FkgRizbWMuo6gPvTrlU5SAZFqPBm+4/rLSdlNLMwPOm2sXmyyFpHqRJ3QffVZwYuHq0tiv5vhDA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .background {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url('img/background_main.jpg') center/cover no-repeat;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .login-box {
+            width: 300px;
+            height: 500px;
+            padding: 40px;
+            background: url('img/background.jpg') center/cover;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .input-group {
+            margin-top: 1px;
+            margin-bottom: 20px;
+            text-align: left;
+            /* Align input labels to the left */
+            position: relative;
+        }
+
+        .input-group label {
+            display: flex;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .input-group input {
+            width: 100%;
+            /* Set the width to 100% to make it flexible */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .password-toggle-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: black; /* Black color for the icon */
+        }
+
+        .login-btn {
+            padding: 1.3em 3em;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 45px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .login-btn:hover {
+            background-color: #45a049;
+            box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+            color: #fff;
+            transform: translateY(-7px);
+        }
+
+        .login-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Styling for links */
+        .additional-links-container {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            width: 85%;
+        }
+
+        .additional-links {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .additional-links:hover {
+            text-decoration: underline;
+            color: rgb(186, 255, 209);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="password-toggle-icon" onclick="togglePasswordVisibility()">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                </div>
+                <button type="button" class="login-btn" onclick="validateLogin()">Login</button>
+            </form>
+            <!-- Additional links -->
+            <div class="additional-links-container">
+                <a href="newaccount.html" class="additional-links" >Create a new account</a>
+                <a href="forgotten.html" class="additional-links">Forgotten password?</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Simple validation - check if both fields are non-empty
+            if (username !== "" && password !== "") {
+                alert("Login successful! Redirecting...");
+                // You can add redirection or further actions here
+            } else {
+                alert("Please enter both username and password.");
+            }
+        }
+
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var icon = document.querySelector(".password-toggle-icon i");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,378 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* styling in navbar */
+#navbar {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    font-family: Delius;
+}
+
+#navbar::before {
+    content: "";
+    background-color: black;
+    z-index: -1;
+    position: absolute;
+    opacity: 0.43;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+#logo {
+    margin: 5px 5px;
+}
+
+#logo img {
+    /* margin: 3px 6px; */
+    height: 70px;
+    width: 70px;
+    border-radius: 40px;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style: none;
+    font-size: 22px;
+}
+
+li a {
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 25px;
+    color: white;
+}
+
+li a:hover {
+    color: black;
+    background-color: white;
+    font-weight: bold;
+}
+
+.signin {
+    display: flex;
+    border-radius: 10px;
+    width: 100px;
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    margin-left: 500px;
+}
+
+.signin:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Styling in Home session */
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 200px;
+    height: 440px;
+    /* font-size: 20px; */
+}
+
+#home::before {
+    content: "";
+    /* background-repeat: no-repeat;
+    background-size:cover; */
+    background: url('img/bg.jpg') no-repeat center center/cover;
+    z-index: -1;
+    position: absolute;
+    opacity: 0.99;
+    top: 0px;
+    left: 0px;
+    height: 75%;
+    width: 100%;
+}
+
+/* For all the headings */
+.h-primary {
+    padding: 10px;
+    font-size: 70px;
+    font-family: Quicksand;
+    font-style: italic;
+    text-align: center;
+    /* ERROR IS COMMING HERE */
+    /* animation: slideIn 1s ease-in-out forwards, pulse 2s infinite alternate;  */
+    color: whitesmoke;
+}
+
+@keyframes slideIn {
+    from {
+        capacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.h-primary:hover {
+    animation: none;
+    /* Disabling previous animations */
+    animation: pulseHover 0.5s linear infinite;
+}
+
+/* ERROR IS COMING HERE */
+/* @keyframes pulseHover {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+} */
+
+/* heading in service_container */
+.h-secondary {
+    padding: 10px;
+    font-size: 25px;
+    font-family: Quicksand;
+    font-weight: bold;
+}
+
+/* style in home para */
+#home p {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    font-family: Ubuntu Mono;
+    padding: 10px;
+    white-space: nowrap;
+    /* Prevent line break */
+    overflow: hidden;
+    /* Hide overflow text */
+    animation: runLine 20s linear infinite;
+    /* Adjust duration as needed */
+    background-color: black;
+    /*Adding background color */
+
+}
+
+@keyframes runLine {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+/* style in home button */
+.btn {
+    margin-top: 10px;
+    padding: 8px 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+    /* Scale the button slightly on hover */
+}
+
+/* style to restraunts */
+.restraunt_image {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cards img {
+    height: 350px;
+    width: 250px;
+
+}
+
+.full_menu {
+    margin-top: 10px;
+    padding: 8px 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.full_menu:hover {
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+    /* Scale the button slightly on hover */
+}
+
+.content {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* About_Us style */
+
+#image {
+    margin: 30px;
+    display: flex;
+}
+
+.center {
+    color: black;
+}
+
+.box {
+    border: 2px solid black;
+    /* padding: 5px; */
+    margin: 5px 40px;
+    background-color: #ebebeb;
+    border-radius: 15px;
+}
+
+.box img {
+    height: 450px;
+    margin: auto;
+    display: block;
+    /* margin-bottom: 20px; */
+    border-radius: 15px;
+}
+
+.about {
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+    font-family: Poppins;
+}
+#About-Us{
+    background-color: yellow;
+    /* ERROR IS CUMING HERE */
+    /* height: 85%; */
+}
+
+/* Key_Points style */
+.split-text-section {
+    background-color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 87%;
+}
+
+.container {
+    /* background-color: rgb(255, 230, 0); */
+    font-family: sans-serif;
+    display: flex;
+    /* Make the container elements side-by-side */
+    width: 100%;
+    /* Adjust width as needed */
+    margin: auto;
+    /* Center the container horizontally */
+}
+
+.left-section,.right-section {
+    flex: 1;
+    /* Make left and right sections equal width */
+    padding: 20px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.left-section h1 {
+    font-size: 45px;
+    /* margin-bottom: 5px; */
+    text-align: center;
+}
+
+.left-section {
+    /* font-size:30px; */
+    margin-top: 150px;
+}
+
+.left-section p {
+    font-size: 20px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.right-section h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.right-section ul {
+    font-size: 30px;
+    list-style: none;
+    display: list-item;
+    margin: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.right-section li {
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+
+.right-section p {
+    font-size: 18px;
+    margin-left: 10%;
+}
+
+.point-circle {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    /* Center text vertically within circle */
+    margin-right: 10px;
+    /* Add space between circle and text */
+}
